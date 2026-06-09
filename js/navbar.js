@@ -39,7 +39,7 @@ const navbarHTML = `
             <input type="text" name="email" id="email" placeholder="Email">
             <input type="password" name="senha" id="senha" placeholder="Senha">
             <button class="btn btn-tertiary">Esqueceu a senha?</button>
-            <button class="btn btn-primary" onclick="window.location.href='principal.html'">Entrar</button>
+            <button class="btn btn-primary" onclick="window.location.href='../pages/principal.html'">Entrar</button>
             <button class="btn btn-secondary">Criar conta</button>
         </dialog>
     </nav>
