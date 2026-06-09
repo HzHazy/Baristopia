@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baristopia | Inicio</title>
+    <!--Ícone da aba-->
+    <link rel="icon" type="image/svg+xml" href="/baristopia/assets/icons/logo-light.svg">
+    <link rel="stylesheet" href="/baristopia/css/main.css">
+    <link rel="stylesheet" href="/baristopia/css/components/modal.css">
+    <link rel="stylesheet" href="/baristopia/css/responsive.css">
+    <link rel="stylesheet" href="/baristopia/css/components/scrollbar.css">
+</head>
+
+<body>
+
+    <div id="navbar-root"></div>
+    
+    <header id="inicio" class="cabecalho">
+        <img src="/baristopia/assets/img/fundo-inicial.svg" alt="Ramos do pé de café" class="foto-fundo">
+    </header>
+
+    <main>
+        
+        <section id="sobre" class="sobre">
+            <h2 class="sobre-titulo">Sobre a Baristopia: O Seu Universo do Café</h2>
+            
+            <div class="sobre-caixa">
+                <p class="sobre-paragrafo">
+                    Bem-vindo à Baristopia! Muito mais do que uma cafeteria, nós somos um verdadeiro ecossistema dedicado à cultura do café especial. Nascemos da paixão pela extração perfeita e do desejo de criar um ponto de encontro onde a arte de fazer café é celebrada todos os dias. Acreditamos que um bom café tem o poder de transformar momentos, conectar pessoas e despertar os sentidos. Por isso, criamos um espaço onde o aroma de grãos recém-moídos encontra o equipamento certo para fazer a mágica acontecer.
+                </p>
+
+                <h5 class="titulo-simples">O Que Nos Move</h5>
+                <p class="sobre-paragrafo">Na Baristopia, nós unimos duas experiências em um só lugar:</p>
+                <ul>
+                    <li><strong>A Cafeteria:</strong> Servimos cafés especiais cuidadosamente selecionados, com torras frescas que valorizam as notas e a origem de cada grão. Do espresso encorpado ao método filtrado mais delicado, cada xícara é preparada por baristas apaixonados pelo que fazem.</li>
+                    <li><strong>O Empório do Barista:</strong> Sabemos que a busca pelo café perfeito não termina no balcão. Por isso, oferecemos uma curadoria completa de produtos, acessórios e equipamentos de alta performance para baristas profissionais e entusiastas. De balanças de precisão e moedores até tampers, filtros e chaleiras bico de ganso, aqui você encontra tudo para elevar o seu ritual, seja na sua casa ou no seu próprio negócio.</li>
+                </ul>
+
+                <h5 class="titulo-simples">Nossa Missão</h5>
+                <p class="sobre-paragrafo">
+                    Nossa missão é democratizar o conhecimento sobre cafés especiais e fornecer as melhores ferramentas para quem deseja explorar esse universo. Queremos ser o seu porto seguro, o lugar onde você pode tirar dúvidas sobre métodos de extração, descobrir um novo grão favorito e levar para casa o equipamento que faltava no seu cantinho do café. Seja você um profissional experiente em busca de excelência, um home barista aprimorando suas técnicas, ou simplesmente alguém que quer sentar, relaxar e tomar um café incrível: o seu lugar é aqui. Sinta-se em casa. Venha tomar um café com a gente, explorar nossas prateleiras e trocar experiências. Baristopia — Onde a arte e a técnica se encontram em cada xícara.
+                </p>
+            </div>
+        </section>
+
+        <section id="informacoes" class="informações">
+            <h2 class="informações-titulo">Informações</h2>
+            
+            <div class="informações-caixa">
+                <div class="informações-card">
+                    <img src="/baristopia/assets/img/FOTO FRENTE LOJA.png" alt="Fachada da cafeteria Baristopia" class="informações-imagem">
+                    <div class="caixa-textos-informações">
+                        <h3 class="info-informações">Nossa cafeteria</h3>
+                        <p class="paragrafo-informações">Venha conhecer a Baristopia, o seu novo refúgio para uma pausa perfeita. Um ambiente simples, acolhedor e com grãos de qualidade esperando por você.</p>
+                        <br>
+                        <p class="paragrafo-informações">📍 Av. Paris, 84 - Bonsucesso, Rio de Janeiro - RJ</p>
+                    </div>
+                </div>
+                
+                <div class="informações-card">
+                    <img src="/baristopia/assets/img/BANNER 1.png" alt="Equipamentos e grãos de café especiais" class="informações-imagem">
+                    <div class="caixa-textos-informações">
+                        <h3 class="info-informações">Nossos produtos</h3>
+                        <p class="paragrafo-informações">Leve a excelência da Baristopia para a sua casa. Mais do que uma paixão, o café é uma arte. Em nossa loja, você encontra uma curadoria impecável de grãos de torra artesanal e os melhores equipamentos do mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="feedback">
+            <h2 class="feedback-titulo">Nossos Clientes</h2>
+            
+            <div class="feedback-caixa">
+                <div class="feedback-card">
+                    <img src="/baristopia/assets/img/Igor comentario.png" alt="Comentário do cliente Igor" class="feedback-imagem">
+                </div>
+                
+                <div class="feedback-card" id="card-central">
+                    <img src="/baristopia/assets/img/Eduarda comentario.png" alt="Comentário da cliente Eduarda" class="feedback-imagem">
+                </div>
+
+                <div class="feedback-card">
+                    <img src="/baristopia/assets/img/Maria comentario.png" alt="Comentário da cliente Maria" class="feedback-imagem">
+                </div>
+            </div>
+        </section>
+
+        <section id="formulario-sessao" class="formulario">
+            <h2 class="cadastro-titulo">Seja parte disso</h2>
+            
+            <div class="card-formulario">
+                <form class="formulario-cadastro" id="formulario" action="#" method="POST">
+
+                    <div class="grupo-form">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo" class="campo-form" required>
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="campo-form" required>
+                    </div>
+
+                    <div class="linha-dividida">
+                        
+                        <div class="grupo-form box-data">
+                            <label>Data de Nascimento</label>
+                            <div class="caixa-selects">
+                                <select name="dia" id="dia" class="campo-form select-data" required>
+                                    <option value="" disabled selected>Dia</option>
+                                </select>
+                                
+                                <select name="mes" id="mes" class="campo-form select-data" required>
+                                    <option value="" disabled selected>Mês</option>
+                                </select>
+                                
+                                <select name="ano" id="ano" class="campo-form select-data" required>
+                                    <option value="" disabled selected>Ano</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grupo-form box-sexo">
+                            <label>Sexo</label>
+                            <div class="caixa-radios">
+                                <label class="radio-label">
+                                    M <input type="radio" name="sexo" value="M" required>
+                                </label>
+                                <label class="radio-label">
+                                    F <input type="radio" name="sexo" value="F" required>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="botao-form botao-largo">Cadastrar</button>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape-baristopia">
+    
+    <div class="coluna-rodape menu">
+        <h4>MENU</h4>
+        <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#informacoes">Informações</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><a href="/baristopia/pages/form.html">Cadastre-se</a></li>
+        </ul>
+    </div>
+
+    <div class="coluna-rodape marca">
+        <img src="/baristopia/assets/img/logo Baristopia.svg" alt="Baristopia Logo" class="logo-img">
+        <p>&copy; 2026 Baristopia Café - Todos os direitos reservados</p>
+    </div>
+
+    <div class="coluna-rodape contato">
+        <h4>CONTATO</h4>
+        <p>(21) 97425-7120</p>
+        <p>baristopia@gmail.com</p>
+    </div>
+
+    </footer>
+
+    <script src="../js/navbar.js"></script>
+    
+    <script src="../js/main.js" defer></script>
+    
+</body>
+
+</html>
