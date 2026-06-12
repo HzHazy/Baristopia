@@ -16,9 +16,11 @@
 
     <div id="navbar-root"></div>
     
-    <header id="inicio" class="cabecalho">
-        <img src="../assets/img/fundo-inicial.svg" alt="Ramos do pé de café" class="foto-fundo">
-    </header>
+    <div class="container-imagem-inicio">
+        <video autoplay loop muted playsinline class="imagem-inicio">
+            <source src="/assets/video/20534643-uhd_3840_2160_24fps.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <main>
         
@@ -68,26 +70,34 @@
             </div>
         </section>
 
+<!-- ESTRUTURA DA SESSÃO FEEDBACK(INICIO)-->
+
         <section id="feedback" class="feedback">
             <h2 class="feedback-titulo">Nossos Clientes</h2>
-            
-            <div class="feedback-caixa">
-                <div class="feedback-card">
-                    <img src="../assets/img/Igor comentario.png" alt="Comentário do cliente Igor" class="feedback-imagem">
-                </div>
-                
-                <div class="feedback-card" id="card-central">
-                    <img src="../assets/img/Eduarda comentario.png" alt="Comentário da cliente Eduarda" class="feedback-imagem">
-                </div>
 
-                <div class="feedback-card">
-                    <img src="../assets/img/Maria comentario.png" alt="Comentário da cliente Maria" class="feedback-imagem">
+            <div class="carrossel-container">
+                <div class="feedback-caixa" id="track">
+                    
+                    <div class="feedback-card pos-esq">
+                        <img src="../assets/img/Igor comentario.png" alt="Comentário do cliente Igor" class="feedback-imagem">
+                    </div>
+                    
+                    <div class="feedback-card pos-cen"> 
+                        <img src="../assets/img/Eduarda comentario.png" alt="Comentário da cliente Eduarda" class="feedback-imagem">
+                    </div>
+                    
+                    <div class="feedback-card pos-dir">
+                        <img src="../assets/img/Maria comentario.png" alt="Comentário da cliente Maria" class="feedback-imagem">
+                    </div>
+
                 </div>
             </div>
         </section>
 
+<!-- ESTRUTURA DA SESSÃO FEEDBACK(FINAL)-->
+
         <section id="formulario-sessao" class="formulario">
-            <h2 class="cadastro-titulo">Seja parte disso</h2>
+            <h2 class="cadastro-titulo">Faça parte disso</h2>
             
             <div class="card-formulario">
                 <form class="formulario-cadastro" id="formulario" action="#" method="POST">

@@ -103,15 +103,22 @@ html, body{
     padding: 0;
 }
 
-.cabecalho {
-    min-height: 100%;
-    display: flex;
+.container-imagem-inicio {
+    /* Define o container para o tamanho exato da tela */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Esconde qualquer pedaço da imagem que vazar */
 }
 
-.foto-fundo {
+.imagem-inicio {
     width: 100%;
     height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+    
+    /* A mágica acontece aqui: faz a imagem se comportar como um background-size: cover */
+    object-fit: cover; 
+    
+    /* Centraliza o foco da imagem */
+    object-position: center;
 }
 
 .navegacao {
@@ -228,6 +235,7 @@ html, body{
     font-size: 24px;
     text-align: justify;
 }
+/* --- Seção Feedback (inicio) --- */
 
 .feedback-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -237,29 +245,62 @@ html, body{
     text-align: center;
 }
 
-.feedback-caixa {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5rem;
-    max-width: 80%;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    align-items: center;
+.carrossel-container {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Esconde o que vazar pros lados */
 }
 
-#card-central {
-    transform: scale(1.20);
+.feedback-caixa {
+    position: relative;
+    width: 110%;
+    max-width: 900px;
+    height: 350px; /* Importante: ajuste esse valor conforme a altura real da sua imagem */
+    cursor: pointer;
+}
+
+.feedback-card {
+    position: absolute;
+    left: 50%; /* Ponto de partida de todos é o meio exato */
+    top: 0;
+    width: 300px;
+    margin-left: -150px; /* Puxa metade da largura para centralizar o eixo perfeitamente */
+    transition: all 0.8s ease-in-out; /* Transição suave de 0.8 segundos */
+}
+
+/* --- As classes que o JS vai ficar trocando --- */
+
+.pos-esq {
+    transform: translateX(-110%) scale(0.85); /* Joga pra esquerda e diminui */
+    opacity: 0.6; /* Deixa mais transparente */
+    z-index: 1; /* Fica atrás */
+}
+
+.pos-cen {
+    transform: translateX(0) scale(1.05); /* Fica no meio e aumenta */
+    opacity: 1; /* Totalmente visível */
+    z-index: 3; /* Fica na frente de todos */
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+.pos-dir {
+    transform: translateX(110%) scale(0.85); /* Joga pra direita e diminui */
+    opacity: 0.6;
+    z-index: 1; /* Fica atrás */
 }
 
 .feedback-imagem {
     width: 100%;
+    display: block;
+    border-radius: 8px;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
 }
 
-/* --- Seção Formulário --- */
+/* --- Seção Formulário (final) --- */
 
 .cadastro-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

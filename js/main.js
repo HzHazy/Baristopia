@@ -1,3 +1,42 @@
+// CARROSSEL FEEDBACK
+
+const cards = document.querySelectorAll('.feedback-card');
+const track = document.getElementById('track');
+let intervaloCarrossel;
+
+// Array com as classes na ordem inicial exata do HTML
+let posicoes = ['pos-esq', 'pos-cen', 'pos-dir'];
+
+function rodarCarrossel() {
+    // A mágica da lógica: 
+    // .pop() tira o último item da lista ('pos-dir')
+    // .unshift() coloca ele no início da lista.
+    // A lista vira: ['pos-dir', 'pos-esq', 'pos-cen']
+    posicoes.unshift(posicoes.pop());
+
+    // Agora passamos pelos 3 cards no HTML e atualizamos as classes deles
+    cards.forEach((card, index) => {
+        // Limpa as classes antigas
+        card.classList.remove('pos-esq', 'pos-cen', 'pos-dir');
+        // Adiciona a nova classe baseada no nosso Array que girou
+        card.classList.add(posicoes[index]);
+    });
+}
+
+function iniciarAutoPlay() {
+    intervaloCarrossel = setInterval(rodarCarrossel, 3000);
+}
+
+// Quando clicar em qualquer lugar da trilha, ele avança e zera o tempo
+track.addEventListener('click', () => {
+    clearInterval(intervaloCarrossel); 
+    rodarCarrossel(); 
+    iniciarAutoPlay(); 
+});
+
+// Dá o play inicial
+iniciarAutoPlay();
+
 // MODAL
 const modal = document.querySelector('#modal');
 const openModal = document.querySelector('.open-button');
@@ -220,3 +259,4 @@ cpfInput.addEventListener('input', (e) => {
         ufs.forEach(sigla => {
             selectUf.add(new Option(sigla, sigla));
         });
+
