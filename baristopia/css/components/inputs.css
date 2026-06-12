@@ -1,0 +1,55 @@
+input, select{ 
+    box-sizing: var(--input-box-sizing);
+    height: var(--input-height);
+    min-width: var(--input-width);
+    width: 100%;
+    max-width: 100%;
+    padding: var(--input-pd);
+    font-family: var(--input-ff);
+    font-size: var(--input-fs);
+    letter-spacing: var(--input-ls);
+    background-color: var(--input-bg);
+    /* border:  2px solid transparent; */
+    border-radius: var(--input-border-radius);
+    background-clip: padding-box;
+    box-shadow: inset 0 0 0 2px var(--beige-medium);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:disabled {
+    background-color: var(--btn-bg-disabled);
+    color: var(--btn-text-disabled);
+    border-color: transparent;
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+input:hover,
+select:hover{
+    box-shadow: inset 0 0 0 2px var(--beige-dark);
+}
+
+input:focus,
+select:focus{
+    border: 3px solid var(--olive-medium);
+    box-shadow: 0px 4px 4px color-mix(in srgb, var(--charcoal) 10%, transparent);
+    outline: none
+}
+
+input::placeholder{
+    color: #a0a0a0;
+    padding-left: 4px;
+}
+
+input[type="radio"]{
+    width: 14px;
+    height: 14px;
+    accent-color: var(--clr-primaria);
+    box-shadow: none;
+    border: 2px solid var(--clr-primaria)
+}
+
+select option{
+    border-radius: 10px;
+}
