@@ -718,6 +718,13 @@ input[type="radio"] {
   flex-direction: column;
 }
 
+.coluna-rodape-marca {
+    transform: translateX(+10%);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* CENTRALIANDO A MARCA NO MEIO */
 .marca {
   position: absolute;
@@ -733,8 +740,11 @@ input[type="radio"] {
 }
 
 .logo-img {
-    max-width: 220px;
-    margin-bottom: 10px;
+  max-width: 220px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h4 {
