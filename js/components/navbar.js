@@ -4,7 +4,7 @@ const navbarHTML = `
             <button id="btn-abrir-menu" class="btn-menu" aria-label="Abrir menu">
                 <img src="../assets/icons/menu.svg" alt="Ícone de menu">
             </button>
-            <img src="../assets/img/Logo Baristopia.svg" alt="Logo Baristopia" class="logo">
+            <img src="../assets/img/Logo_Baristopia.svg" alt="Logo Baristopia" class="logo">
             <button class="open-button btn btn-primary" data-modal="modal-login">Entrar</button>
         </div>
         
