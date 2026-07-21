@@ -735,9 +735,6 @@ input[type="radio"] {
 .logo-img {
     max-width: 220px;
     margin-bottom: 10px;
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 h4 {
