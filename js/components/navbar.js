@@ -17,12 +17,12 @@ const navbarHTML = `
             </button>
 
             <ul class="links-menu-lateral">
-                <li><a href="../pages/index.html#sobre">Sobre</a></li>
+                <li><a href="../index.html#sobre">Sobre</a></li>
                 <li><a href="../pages/principal.html#cafes">Cafés</a></li>
                 <li><a href="../pages/principal.html#equipamentos">Equipamentos</a></li>
                 <li><a href="../pages/principal.html#kits">Kits</a></li>
-                <li><a href="../pages/index.html#informacoes">Informações</a></li>
-                <li><a href="../pages/index.html#formulario">Faça parte disso</a></li>
+                <li><a href="../index.html#informacoes">Informações</a></li>
+                <li><a href="../index.html#formulario">Faça parte disso</a></li>
             </ul>
         </aside>
         
