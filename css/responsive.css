@@ -1,0 +1,188 @@
+@media (max-width: 890px) {
+    
+    .coluna-rodape-marca {
+        display: none;
+    }
+
+    .marca {
+        display: none;  
+    }
+
+    .linha-dividida {
+        flex-direction: column; /* Coloca a Data em cima e o Sexo embaixo */
+        gap: 24px;
+    }
+
+    .card-formulario, .registration-card {
+        padding: 24px; /* Diminui o respiro do card no celular */
+    }
+    
+    /* Redução geral de espaçamentos nas seções */
+    .sobre, 
+    .informações, 
+    .feedback, 
+    .formulario {
+        padding: 4rem 1.5rem; /* Reduz o espaço nas laterais e em cima/baixo */
+    }
+
+    /* Ajuste da Tipografia (Títulos menores) */
+    .sobre-titulo {
+        font-size: 40px; 
+    }
+
+    .informações-titulo, 
+    .feedback-titulo, 
+    .cadastro-titulo {
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+
+    /* Ajustes na caixa de texto "Sobre" */
+    .sobre-caixa {
+        padding: 1.5rem;
+        font-size: 16px; /* Texto um pouco menor para não cansar a leitura */
+    }
+
+    .sobre-caixa ul {
+        padding: 10px 20px; /* Reduz o recuo dos marcadores no celular */
+    }
+
+    /* Ajustes no Grid e Cards */
+    .informações-caixa,
+    .feedback-caixa {
+        grid-template-columns: 1fr; 
+        gap: 2rem; 
+    }
+
+    .paragrafo-informações,
+    .sobre-paragrafo, 
+    .feedback-paragrafo {
+        font-size: 16px;
+    }
+
+    /* Correção do Efeito de Destaque */
+    #card-central {
+        transform: scale(1); /* Retira o zoom para que os cards empilhados fiquem uniformes */
+    }
+
+    /* Ajuste da Navegação (Menu) */
+    .navegacao {
+        padding: 1rem;
+    }
+
+    .navegacao-links .btn {
+        /* Oculta ou diminui o botão de "Entrar" se faltar espaço*/
+        min-width: auto;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 890px) {
+  .cafes-lista, .equipamentos-lista, .kits-lista {
+    /* Força exatamente 2 colunas de tamanhos iguais */
+    grid-template-columns: repeat(2, 1fr); 
+    
+    /* Reduz drasticamente o espaço entre os cards para caber na tela pequena */
+    gap: 1rem; /* Aproximadamente 16px */
+    
+    /* Permite que o container ocupe mais espaço da tela no mobile */
+    max-width: 90%; 
+  }
+}
+
+@media (max-width: 890px) {
+    .sobre-titulo {
+        font-size: 32px;
+    }
+    
+    .titulo-simples {
+        font-size: 20px;
+    }
+
+    /* Diminui o texto do título e preço para não quebrar a linha */
+    .produto-titulo {
+        font-size: 1rem;
+    }
+  
+    .produto-preco {
+        font-size: 1.1rem;
+    }
+
+  /* Reduz o espaçamento interno (padding) dos botões */
+    .card-botoes .btn {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .card-botoes .btn-primary {
+        font-size: 0; /* O texto "ADICIONAR AO CARRINHO" encolhe até ficar invisível */
+    }
+
+  /* 2. Injeta o texto curto no espaço vazio */
+    .card-botoes .btn-primary::after {
+        content: "+CARRINHO"; 
+        font-size: 0.8rem; /* Devolve o tamanho da fonte apenas para o texto novo */
+    }
+
+    .produto-descricao-overlay {
+    padding: 1rem; 
+    overflow-y: auto; /* Carta na manga: se a tela for minúscula, permite rolar o texto em vez de cortar */
+  }
+
+  /* 2. Diminui a fonte e o espaçamento do parágrafo */
+  .produto-descricao-overlay p {
+    font-size: 0.9rem; 
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  /* 3. Diminui a fonte e ajusta as bolinhas da lista */
+  .produto-descricao-overlay ul {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    padding-left: 1.2rem; /* Puxa os itens um pouco mais para a esquerda */
+  }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        display: none;
+    }
+
+  /* 1. Otimiza o espaço interno do overlay ao máximo */
+  .produto-descricao-overlay {
+    padding: 0.8rem; /* Reduz o preenchimento para aproveitar melhor o espaço escuro */
+  }
+
+  /* 2. Fonte de "bula de remédio" (mas ainda legível) para caber o texto */
+  .produto-descricao-overlay p {
+    font-size: 0.75rem; /* Aprox. 12px */
+    line-height: 1.2; /* Junta mais as linhas */
+    margin-bottom: 0.5rem; /* Aproxima o parágrafo da lista */
+  }
+
+  /* 3. Ajuste fino na lista de notas e métodos */
+  .produto-descricao-overlay ul {
+    font-size: 0.75rem;
+    line-height: 1.2;
+    padding-left: 1rem; /* Puxa a lista um pouco mais para a esquerda */
+  }
+
+  .produto-descricao-overlay ul li {
+    margin-bottom: 0.3rem; /* Tira o espaço excessivo entre os itens da lista */
+  }
+}
+
+.cafes, .equipamentos, .kits, .informações {
+  /* Define a largura máxima que o site pode crescer. 1200px ou 1440px são os padrões mais usados hoje */
+  max-width: 1437px; 
+  
+  /* O "0" tira as margens de cima e baixo. O "auto" calcula o espaço vazio das laterais e divide por igual, centralizando o container! */
+  margin: 0 auto; 
+  
+  /* (Opcional) Dá um respiro nas laterais para que o conteúdo não cole na borda da tela em celulares */
+  padding: 0 20px; 
+  box-sizing: border-box;
+}

@@ -1,6 +1,3 @@
-// navbar.js
-
-// 1. Guardamos todo o seu HTML dentro de crases (``)
 const navbarHTML = `
     <nav id="navegacao" class="navegacao">
         <div class="navegacao-links">
@@ -18,13 +15,14 @@ const navbarHTML = `
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
+
             <ul class="links-menu-lateral">
                 <li><a href="../pages/index.html#sobre">Sobre</a></li>
                 <li><a href="../pages/principal.html#cafes">Cafés</a></li>
                 <li><a href="../pages/principal.html#equipamentos">Equipamentos</a></li>
                 <li><a href="../pages/principal.html#kits">Kits</a></li>
                 <li><a href="../pages/index.html#informacoes">Informações</a></li>
-                <li><a href="../pages/form.html">Cadastre-se</a></li>
+                <li><a href="../pages/index.html#formulario">Faça parte disso</a></li>
             </ul>
         </aside>
         
@@ -35,25 +33,26 @@ const navbarHTML = `
                 </svg>
             </button>
             <h2>Seja bem vindo, de volta, <p>inicie sua sessão.</p></h2>
-            <input type="text" name="email" id="email" placeholder="Email">
-            <input type="password" name="senha" id="senha" placeholder="Senha">
+            <div id="login-message" class="status-message" style="display: none;"></div>
+            <input type="text" name="email" id="login-email" placeholder="Email">
+            <input type="password" name="senha" id="login-senha" placeholder="Senha">
             <button class="btn btn-tertiary">Esqueceu a senha?</button>
-            <button class="btn btn-primary" onclick="window.location.href='principal.html'">Entrar</button>
+            <button class="btn btn-primary" id="btn-efetuar-login">Entrar</button>
             <button class="btn btn-secondary">Criar conta</button>
         </dialog>
     </nav>
 `;
 
-// 2. Injetamos esse código dentro da página HTML
 document.getElementById('navbar-root').innerHTML = navbarHTML;
 
-// 3. Lógica do Menu Lateral (JavaScript)
-// Capturamos os elementos após a injeção do HTML
+// Avisa que a navbar já existe no DOM
+window.dispatchEvent(new Event('navbarCarregada'));
+
+// Menu Lateral (JavaScript)
 const menuLateral = document.getElementById('menu-lateral');
 const btnAbrirMenu = document.getElementById('btn-abrir-menu');
 const btnFecharMenu = document.getElementById('btn-fechar-menu');
 
-// Função padrão para fechar o menu
 const fecharMenu = () => {
     menuLateral.classList.remove('aberto');
 };
@@ -67,7 +66,6 @@ btnAbrirMenu.addEventListener('click', (e) => {
 // Quando clicar no X, remove a classe "aberto"
 btnFecharMenu.addEventListener('click', fecharMenu);
 
-// --- CORREÇÃO 1: Fechar ao clicar em qualquer opção do menu ---
 // Selecionamos todos os links <a> que estão dentro da lista do menu lateral
 const linksMenu = document.querySelectorAll('.links-menu-lateral a');
 
@@ -76,7 +74,6 @@ linksMenu.forEach(link => {
     link.addEventListener('click', fecharMenu);
 });
 
-// --- CORREÇÃO 2: Fechar ao clicar do lado de fora do menu ---
 // Adicionamos um ouvinte de clique no documento inteiro (na página toda)
 document.addEventListener('click', (evento) => {
     // Verificamos se o menu está aberto
@@ -95,7 +92,6 @@ document.addEventListener('click', (evento) => {
 });
 
 // --- Lógica do Scroll da Navbar ---
-// Executa apenas se a navbar foi injetada com sucesso
 const navbarElement = document.getElementById('navegacao');
 
 if (navbarElement) {

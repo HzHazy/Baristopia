@@ -2,6 +2,8 @@
 @import url('fonts.css');
 @import url('components/buttons.css');
 @import url('components/inputs.css');
+@import url('components/dropdown.css');
+@import url('components/modal.css');
 
 :root{
     /*Fontes primitivas*/
@@ -101,32 +103,44 @@ html, body{
     position: relative;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
-body {
-    /* 1. O TRUQUE DA TRANSLUCIDEZ */
-    /* Colocamos uma camada de cor com transparência (rgba) ANTES da imagem */
-    background-image: 
-        linear-gradient(rgba(245, 242, 235, 0.85), rgba(245, 242, 235, 0.85)), /* Cor de fundo com 85% de opacidade */
-        url('../assets/img/FOTO\ FUNDO\ INICIAL.png'); /* Sua imagem real */
+/*////////////////IMAGEM DE FUNDO DAS PÁGINAS(INICIO)////////////////*/
 
-    /* 2. FAZ A IMAGEM COBRIR TUDO */
+body {
+    background-image: 
+        linear-gradient(rgba(245, 242, 235, 0.85), rgba(245, 242, 235, 0.85)),
+        url('../assets/img/FOTO\ FUNDO\ INICIAL.png');
+
+    /* FAZ A IMAGEM COBRIR TUDO */
     background-size: cover;
     
-    /* 3. CENTRALIZA A IMAGEM */
+    /* CENTRALIZA A IMAGEM */
     background-position: center;
     
-    /* 4. NÃO DEIXA A IMAGEM REPETIR COMO UM MOSAICO */
+    /* NÃO DEIXA A IMAGEM REPETIR COMO UM MOSAICO */
     background-repeat: no-repeat;
 
-    /* 5. O SEGREDO PARA SITES LONGOS */
-    /* Isso faz a imagem ficar "pregada" no fundo enquanto o usuário rola a página para baixo */
+    /* MANTEM A IMAGEM NO LUGAR */
     background-attachment: fixed; 
 }
 
-/* Container principal (a tela cheia) */
+body.page-form {
+  height: auto;
+  overflow-y: auto; /* Libera o scroll vertical */
+  display: block;
+  background-image:
+    url('../assets/img/graos_de_cafe.jpg'); 
+}
+
+/*////////////////IMAGEM DE FUNDO DAS PÁGINAS(FINALL)////////////////*/
+
+/*////////////////VIDEO DE INICIO DE INICIO DAS PÁGINAS(INICIO)////////////////*/
+
+/* CONTAINER DA SEÇÃO DE INÍCIO */
 .secao-inicio {
-    position: relative; /* Janela de referência para o vídeo absoluto */
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -135,21 +149,21 @@ body {
     overflow: hidden;
 }
 
-/* O Vídeo: fixado no fundo */
+/* FIXA O VÍDEO NO FUNDO */
 .video-fundo {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Preenche todo o espaço sem distorcer */
-    z-index: 1; /* Camada de trás */
+    object-fit: cover;
+    z-index: 1;
 }
 
-/* O Conteúdo: flutuando na frente do vídeo */
+/* CONTEÚDO DA SEÇÃO DE INÍCIO */
 .hero-conteudo {
-    position: relative; /* Necessário para ativar o z-index */
-    z-index: 2; /* Número maior significa que fica na FRENTE do vídeo */
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,40 +172,7 @@ body {
     padding: 0 20px;
 }
 
-/* =========================================================
-   ESTILOS DA NAVBAR NO TOPO (POR CIMA DO VÍDEO)
-   Usamos :not(.com-fundo) para aplicar apenas no início
-========================================================= */
-
-/* 1. Transforma o ícone do menu e a logo em branco puro */
-.navegacao:not(.com-fundo) .btn-menu img,
-.navegacao:not(.com-fundo) .logo {
-    filter: brightness(0) invert(1);
-    transition: filter 0.4s ease; /* Transição suave na hora do scroll */
-}
-
-/* 2. Garante que os ícones voltem à cor original ao fazer scroll */
-.navegacao.com-fundo .btn-menu img,
-.navegacao.com-fundo .logo {
-    filter: none;
-    transition: filter 0.4s ease;
-}
-
-/* 3. Ajusta o botão "Entrar" para ficar branco e transparente no topo */
-.navegacao:not(.com-fundo) .open-button {
-    background-color: transparent;
-    color: #ffffff;
-    border: 1.5px solid #ffffff;
-    box-shadow: none; /* Remove a sombra escura para não pesar no visual */
-    transition: all 0.3s ease;
-}
-
-/* 4. Efeito hover no botão "Entrar" quando está no topo */
-.navegacao:not(.com-fundo) .open-button:hover {
-    background-color: #ffffff;
-    color: var(--cherry-medium); /* O texto fica vermelho escuro ao passar o rato */
-}
-
+/* TEXTO QUE APARECE NA SEÇÃO DE INÍCIO */
 .hero-titulo {
     font-family: 'Georgia', serif;
     font-size: 3.5rem;
@@ -204,6 +185,7 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
 }
 
+/* BOTÃO QUE LEVA A LOJA */
 .btn-loja {
     margin-top: 20px;
     padding: 15px 40px;
@@ -218,10 +200,15 @@ body {
     transition: all 0.3s ease;
 }
 
+/* HOVER NO BOTÃO QUE LEVA A LOJA */
 .btn-loja:hover {
     background-color: #ffffff;
     color: #1a0d00; /* Inverte a cor do texto no hover para dar destaque */
 }
+
+/*////////////////VIDEO DE INICIO DE INICIO DAS PÁGINAS(FINAL)////////////////*/
+
+/*////////////////NAVBAR PADRÃO(INICIO)////////////////*/
 
 .navegacao {
     position: fixed;
@@ -255,6 +242,158 @@ body {
     width: 100%;
 }
 
+/*////////////////NAVBAR PADRÃO(FINAL)////////////////*/
+
+/*////////////////NAVBAR ALTERNATIVA - BRANCA(INICIO)////////////////*/
+
+/* TRANSFORMA O ICONE MENU E A LOGO EM BRANCO PURO */
+.navegacao:not(.com-fundo) .btn-menu img,
+.navegacao:not(.com-fundo) .logo {
+    filter: brightness(0) invert(1);
+    transition: filter 0.4s ease;
+}
+
+/* GARANTE QUE OS ICONES VOLTEM À COR ORIGINAL AO FAZER SCROLL */
+.navegacao.com-fundo .btn-menu img,
+.navegacao.com-fundo .logo {
+    filter: none;
+    transition: filter 0.4s ease;
+}
+
+/* AJUSTA O BOTÃO "ENTRAR" PARA FICAR BRANCO E TRANSPARENTE NO TOPO */
+.navegacao:not(.com-fundo) .open-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+/* EFEITO HOVER NO BOTÃO "ENTRAR" QUANDO ESTÁ NO TOPO */
+.navegacao:not(.com-fundo) .open-button:hover {
+    background-color: #ffffff;
+    color: var(--cherry-medium); /* O texto fica vermelho escuro ao passar o rato */
+}
+
+/*////////////////NAVBAR ALTERNATIVA - BRANCA(FINAL)////////////////*/
+
+/*/////////// ALINHAMENTO E CORES DOS ÍCONES DA SESSÃO ////////////*/
+
+/* 1. Alinha o contêiner à direita */
+.sessao-icones-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* 2. Cria o "bloco de cor" e corrige o desalinhamento */
+.icone-molde {
+    display: block; 
+    width: 32px;  
+    height: 32px; 
+    cursor: pointer;
+    background-color: var(--offwhite); 
+    transition: background-color 0.3s ease;
+    
+    /* Anula a margem do a, p do footer */
+    margin: 0; 
+}
+
+/* 3. SVGs - máscaraca da cor */
+.icone-carrinho {
+    -webkit-mask: url('../assets/icons/shopping-cart.svg') no-repeat center / contain;
+    mask: url('../assets/icons/shopping-cart.svg') no-repeat center / contain;
+}
+
+.icone-usuario {
+    -webkit-mask: url('../assets/icons/user.svg') no-repeat center / contain;
+    mask: url('../assets/icons/user.svg') no-repeat center / contain;
+}
+
+/* 4. A mágica da troca de cor no Scroll (Fica vermelho quando desce a página) */
+.navegacao.com-fundo .icone-molde {
+    background-color: var(--clr-primaria); 
+}
+
+
+/*////////////////MENU LATERAL(INICIO)////////////////*/
+
+/* REMOVE O FUNDO DO HAMBURGUER */
+.btn-menu {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* ESTRUTURA O MENU FORA DA TELA */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px; 
+    height: 100vh;
+    background-color: var(--beige-light);
+    z-index: 9999;
+    padding: 32px 24px;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.menu-lateral.aberto {
+    transform: translateX(0);
+}
+
+.btn-fechar-menu {
+    background: transparent;
+    border: none;
+    color: var(--cherry-medium);
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.btn-fechar-menu:hover {
+    color: var(--cherry-dark);
+}
+
+.links-menu-lateral {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.links-menu-lateral li {
+    border-bottom: 1px solid var(--beige-medium);
+}
+
+.links-menu-lateral a {
+    display: block;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--cherry-medium);
+    font-family: var(--ff-body);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.links-menu-lateral a:hover {
+    color: var(--cherry-dark);
+    padding-left: 8px;
+}
+
+/*////////////////MENU LATERAL(FINAL)////////////////*/
+
+/*////////////////SEÇÃO SOBRE(INICIO)////////////////*/
+
 .sobre {
     display: flex;
     flex-direction: column;;
@@ -275,7 +414,7 @@ body {
     font-size: 24px;
     color: var(--clr-secundaria);
     margin-bottom: 0%;
-    text-align: left;
+    text-align: justify;
 }
 
 .sobre-titulo {
@@ -292,14 +431,18 @@ body {
     border-radius: 10px;
     font-size: 24px;
     line-height: 1.6;
-    text-align: left;
+    text-align: justify;
 }
 
 .sobre-paragrafo {
     margin-bottom: 24px;
     font-size: 24px;
-    text-align: left;
+    text-align: justify;
 }
+
+/*////////////////SEÇÃO SOBRE(FINAL)////////////////*/
+
+/*////////////////SEÇÃO INFORMAÇÕES(INICIO)////////////////*/
 
 .informações-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -336,7 +479,10 @@ body {
     font-size: 24px;
     text-align: justify;
 }
-/* --- Seção Feedback (inicio) --- */
+
+/*////////////////SEÇÃO INFORMAÇÕES(FINAL)////////////////*/
+
+/*////////////////SEÇÃO NOSSOS CLIENTES(INICIO)////////////////*/
 
 .feedback-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -344,14 +490,6 @@ body {
     color: var(--clr-primaria);
     margin-bottom: 60px;
     text-align: center;
-}
-
-.carrossel-container {
-    width: 100%;
-    padding: 40px 0;
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Esconde o que vazar pros lados */
 }
 
 .feedback-caixa {
@@ -371,7 +509,21 @@ body {
     transition: all 0.8s ease-in-out; /* Transição suave de 0.8 segundos */
 }
 
-/* --- As classes que o JS vai ficar trocando --- */
+.feedback-imagem {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+}
+.carrossel-container {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Esconde o que vazar pros lados */
+}
 
 .pos-esq {
     transform: translateX(-110%) scale(0.85); /* Joga pra esquerda e diminui */
@@ -392,16 +544,9 @@ body {
     z-index: 1; /* Fica atrás */
 }
 
-.feedback-imagem {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
-}
+/*////////////////SEÇÃO NOSSOS CLIENTES(FINAL)////////////////*/
 
-/* --- Seção Formulário (final) --- */
+/*////////////////SEÇÃO FAÇA PARTE DISSO(INICIO)////////////////*/
 
 .cadastro-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -419,7 +564,6 @@ body {
     align-items: center;    /* Centraliza tudo no meio da tela */
 }
 
-/* O "Card" branco flutuante */
 .card-formulario {
     background-color: #FFFFFF;
     padding: 40px;
@@ -429,7 +573,7 @@ body {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08); /* Sombra bem suave e elegante */
 }
 
-.formulario-cadastro {
+.formulario-cadastro{
     display: flex;
     flex-direction: column;
     gap: 24px; /* Espaço entre as linhas do formulário */
@@ -484,9 +628,9 @@ body {
     gap: 20px;
 }
 
-/* Ajustes da área de Data */
+/* AJUSTA A AREÁ DA DATA */
 .box-data {
-    flex: 2; /* Ocupa mais espaço */
+    flex: 2;
 }
 
 .caixa-selects {
@@ -499,16 +643,16 @@ body {
     cursor: pointer;
 }
 
-/* Ajustes da área de Sexo */
+/* AJUSTA ÁREA DE SEXO */
 .box-sexo {
-    flex: 1; /* Ocupa menos espaço */
+    flex: 1;
 }
 
 .caixa-radios {
     display: flex;
     align-items: center;
     gap: 20px;
-    height: var(--input-height); /* Mesma altura dos inputs para alinhar certinho */
+    height: var(--input-height); /* ALINHA ALTURA DOS INPUTS */
 }
 
 .radio-label {
@@ -521,7 +665,7 @@ body {
     cursor: pointer;
 }
 
-/* Customização da bolinha do Radio (opcional, para ficar na cor do tema) */
+/* DEIXA A BOLINHA DO RADIO NA COR DO TEMA */
 
 input[type="radio"] {
     accent-color: var(--clr-primaria);
@@ -530,7 +674,7 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-/* Botão Largo de Cadastrar */
+/* BOTÃO LARDO DE CADASTRAR */
 .botao-largo {
     width: 100%;
     height: var(--btn-height);
@@ -551,9 +695,11 @@ input[type="radio"] {
     transform: translateY(-2px);
 }
 
-/* footer */
+/*////////////////SEÇÃO FAÇA PARTE DISSO(FINAL)////////////////*/
 
-/* o contêiner principal */
+/*////////////////RODAPÉ(INICIO)////////////////*/
+
+/* CONTAINER DO RODAPÉ */
 .rodape-baristopia {
   display: flex;
   justify-content: space-between;
@@ -566,13 +712,13 @@ input[type="radio"] {
   position: relative;
 }
 
-/* as colunas respirando */
+/* COLUNAS */
 .coluna-rodape {
   display: flex;
   flex-direction: column;
 }
 
-/* centralizando a marca no meio da tela */
+/* CENTRALIANDO A MARCA NO MEIO */
 .marca {
   position: absolute;
   left: 50%;
@@ -583,7 +729,7 @@ input[type="radio"] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: max-content; /* garante que o texto não quebre sem necessidade */
+  width: max-content; /* GARANTE QUE O TEXTO NÃO QUEBRE SEM NECESSIDADE */
 }
 
 .logo-img {
@@ -591,7 +737,6 @@ input[type="radio"] {
   margin-bottom: 10px;
 }
 
-/* tipografia e pequenos detalhes */
 h4 {
   font-size: 13px;
   margin-bottom: 16px;
@@ -616,32 +761,20 @@ a, p {
 }
 
 a:hover {
-  opacity: 0.6; /* um efeito fantasma leve quando passa o mouse */
+  opacity: 0.6; /* UM EFEITO FANTASMA LEVE QUANDO PASSA O MOUSE */
 }
 
-/*LOJA TESTE*/
+/*////////////////RODAPÉ(FINAL)////////////////*/
 
-.cafes-titulo {
+
+/*////////////////PRINCIPAL.HTML(INICIO)////////////////*/
+
+.cafes-titulo, .equipamentos-titulo, .kits-titulo {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 48px;
     color: var(--clr-primaria);
     margin-bottom: 60px;
-    text-align: center;
-}
-
-.equipamentos-titulo {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 48px;
-    color: var(--clr-primaria);
-    margin-bottom: 60px;
-    text-align: center;
-}
-
-.kits-titulo {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 48px;
-    color: var(--clr-primaria);
-    margin-bottom: 60px;
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -649,8 +782,8 @@ a:hover {
     background-color: #FFFFFF;
     border-radius: 16px;
     width: 100%;
-    max-width: 280px; 
-    display: flex;
+    max-width: 100%; 
+    display: grid;
     flex-direction: column;
     overflow: hidden; /* Garante que a imagem não vaze as bordas arredondadas */
     box-shadow: 0px 4px 12px color-mix(in srgb, var(--charcoal) 10%, transparent);
@@ -666,18 +799,64 @@ a:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Se a sua imagem for um PNG sem fundo, descomente a linha abaixo 
-       para gerar aquele fundo bege da sua foto de referência: */
-    /* background-color: #F8EFE6; */
+    position:relative;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .card-imagem img {
     width: 100%;
     height: auto;
     object-fit: cover;
+    display: block;
 }
 
-/* Textos do Card */
+/* Container do overlay com alinhamento corrigido */
+.produto-descricao-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Mantém o fundo escuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza no meio do card verticalmente */
+  align-items: flex-start; /* Joga o conteúdo para a esquerda */
+  text-align: left; /* Garante que o texto alinhe à esquerda */
+  padding: 2rem; /* Aumenta o respiro nas laterais igual ao seu design */
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* O parágrafo principal (maior e branco) */
+.produto-descricao-overlay p {
+  color: #ffffff; /* Força a cor branca */
+  font-size: 1.15rem; /* Aumenta bem o tamanho da fonte (aprox 18px) */
+  line-height: 1.4; /* Espaçamento entre as linhas */
+  margin-bottom: 1.5rem; /* Empurra a lista mais para baixo */
+}
+
+/* A lista de notas e métodos */
+.produto-descricao-overlay ul {
+  color: #ffffff; /* Força a cor branca */
+  list-style: disc; /* Usa as "bolinhas" padrão do HTML */
+  padding-left: 1.5rem; /* Dá espaço para as bolinhas não sumirem */
+  margin: 0;
+  font-size: 1.15rem; /* Mesmo tamanho do texto de cima */
+  line-height: 1.4;
+}
+
+.produto-descricao-overlay ul li {
+  margin-bottom: 0.8rem; /* Espaço entre cada item da lista */
+}
+
+.card-imagem:hover .produto-descricao-overlay {
+  opacity: 1;
+}
+
+/* TEXTOS DO CARD */
 .card-info {
     display: flex;
     flex-direction: column;
@@ -709,7 +888,7 @@ a:hover {
     color: var(--cherry-medium);
 }
 
-/* Área e alinhamento dos Botões */
+/* ALINHAMENTOS DOS BOTÕES */
 .card-botoes {
     display: flex;
     flex-direction: column;
@@ -742,7 +921,7 @@ a:hover {
 
 .cafes-lista, .equipamentos-lista, .kits-lista {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 5rem;
     max-width: 80%;
     margin: 0 auto;
@@ -750,82 +929,4 @@ a:hover {
     align-items: center;
 }
 
-/* --- Componente: Menu Lateral --- */
-
-/* Tira o fundo do botão dos 3 traços */
-.btn-menu {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-/* Estrutura do menu fora da tela */
-.menu-lateral {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px; 
-    height: 100vh; /* Ocupa 100% da altura da tela */
-    background-color: var(--beige-light); /* Puxando a cor da sua paleta */
-    z-index: 9999; /* Garante que fique por cima de tudo */
-    padding: 32px 24px;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    
-    /* A MÁGICA ACONTECE AQUI: */
-    transform: translateX(-100%); /* Joga o menu inteiro pra fora da tela */
-    transition: transform 0.4s ease-in-out; /* Faz a transição ser suave */
-}
-
-/* Quando o JavaScript adiciona essa classe, o menu vem pra posição 0 (original) */
-.menu-lateral.aberto {
-    transform: translateX(0);
-}
-
-/* Botão de Fechar (X) */
-.btn-fechar-menu {
-    background: transparent;
-    border: none;
-    color: var(--cherry-medium);
-    cursor: pointer;
-    padding: 0;
-    margin-bottom: 40px;
-}
-
-.btn-fechar-menu:hover {
-    color: var(--cherry-dark);
-}
-
-/* Lista de Links do menu */
-.links-menu-lateral {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* As linhas separadoras igualzinhas à sua imagem */
-.links-menu-lateral li {
-    border-bottom: 1px solid var(--beige-medium);
-}
-
-.links-menu-lateral a {
-    display: block;
-    padding: 16px 0;
-    text-decoration: none;
-    color: var(--cherry-medium);
-    font-family: var(--ff-body);
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-}
-
-.links-menu-lateral a:hover {
-    color: var(--cherry-dark);
-    padding-left: 8px; /* Dá um efeitinho bem legal do link andando pro lado */
-}
+/*////////////////PRINCIPAL.HTML(FINAL)////////////////*/

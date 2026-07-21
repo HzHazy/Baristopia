@@ -6,11 +6,12 @@
     <title>Baristopia | Principal</title>
     <!--Ícone da aba-->
     <link rel="icon" type="image/svg+xml" href="/baristopia/assets/icons/logo-light.svg">
-    <link rel="stylesheet" href="/baristopia/css/main.css">
     <link rel="stylesheet" href="/baristopia/css/components/modal.css">
     <link rel="stylesheet" href="/baristopia/css/responsive.css">
     <link rel="stylesheet" href="/baristopia/css/components/scrollbar.css">
+    <link rel="stylesheet" href="/baristopia/css/main.css">
 </head>
+
 <body>
 
     <div id="navbar-root"></div>
@@ -19,6 +20,10 @@
         <video autoplay loop muted playsinline class="video-fundo">
             <source src="../assets/video/15165033_3840_2160_25fps.mp4" type="video/mp4">
         </video>
+
+        <div class="hero-conteudo">
+            <h1 class="hero-titulo">Conheça nossos cafés e equipamentos</h1>
+        </div>
     </header>
 
     <section id="cafes" class="cafes">
@@ -27,11 +32,19 @@
         <slot id="cafes-lista" class="cafes-lista">
             <article class="card-produto">
                 <div class="card-imagem">
-                    <img src="../assets/img/FOTO BOURBON AMARELO.png" alt="Embalagem do Café Pacamara 250g">
+                    <img src="../assets/img/FOTO BOURBON AMARELO.png" alt="Embalagem do Café Bourbon Amarelo 250g">
+                  
+                    <div class="produto-descricao-overlay">
+                        <p>O clássico confortável. Café com alta doçura, baixa acidez e textura aveludada. Perfeito para o dia a dia.</p>
+                        <ul>
+                            <li>Notas: Caramelo, Chocolate ao Leite, Amêndoas</li>
+                            <li>Métodos: Espresso, Moka, Prensa Francesa.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <header class="card-info">
-                    <h3 class="produto-titulo">CAFÉ PACAMARA</h3>
+                    <h3 class="produto-titulo">CAFÉ BOURBON</h3>
                     <span class="produto-peso">250g</span>
                     <p class="produto-preco">R$84,99</p>
                 </header>
@@ -44,7 +57,15 @@
             
             <article class="card-produto">
                 <div class="card-imagem">
-                    <img src="../assets/img/FOTO CATUAÍ.png" alt="Embalagem do Café Pacamara 250g">
+                    <img src="../assets/img/FOTO CATUAÍ.png" alt="Embalagem do Café Catuaí 250g">
+
+                    <div class="produto-descricao-overlay">
+                        <p>Encorpado e marcante. Textura sedosa que equilibra o doce de frutas vermelhas maduras com o amargor do cacau.</p>
+                        <ul>
+                            <li>Notas: Cereja, Framboesa, Cacau Nibs.</li>
+                            <li>Métodos: Espresso, Cold Brew, Clever Dripper.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <header class="card-info">
@@ -61,11 +82,94 @@
 
             <article class="card-produto">
                 <div class="card-imagem">
-                    <img src="../assets/img/FOTO ETIÓPIA.png" alt="Embalagem do Café Pacamara 250g">
+                    <img src="../assets/img/FOTO ETIÓPIA.png" alt="Embalagem do Café Etiópia 250g">
+
+                    <div class="produto-descricao-overlay">
+                        <p>Leve, limpo e brilhante. Acidez cítrica vibrante com um perfume que remete à elegância de um chá especial.</p>
+                        <ul>
+                            <li>Notas: Limão Siciliano, Flores Brancas, Chá Claro.</li>
+                            <li>Métodos: Aeropress, V60, Kalita Wave.</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <header class="card-info">
                     <h3 class="produto-titulo">CAFÉ ETIÓPIA</h3>
+                    <span class="produto-peso">250g</span>
+                    <p class="produto-preco">R$84,99</p>
+                </header>
+
+                <div class="card-botoes">
+                    <button type="button" class="btn btn-primary">ADICIONAR AO CARRINHO</button>
+                    <button type="button" class="btn btn-outline">COMPRAR</button>
+                </div>
+            </article>
+
+            <article class="card-produto">
+                <div class="card-imagem">
+                    <img src="../assets/img/FOTO GEISHA.png" alt="Embalagem do Café Pacamara 250g">
+
+                    <div class="produto-descricao-overlay">
+                        <p>Uma experiência rara e elegante. Bebida exótica, super complexa e com aromas florais delicados.</p>
+                        <ul>
+                            <li>Notas: Jasmim, Bergamota, Chá Preto.</li>
+                            <li>Métodos: V60, Chemex.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <header class="card-info">
+                    <h3 class="produto-titulo">CAFÉ GEISHA</h3>
+                    <span class="produto-peso">250g</span>
+                    <p class="produto-preco">R$84,99</p>
+                </header>
+
+                <div class="card-botoes">
+                    <button type="button" class="btn btn-primary">ADICIONAR AO CARRINHO</button>
+                    <button type="button" class="btn btn-outline">COMPRAR</button>
+                </div>
+            </article>
+
+            <article class="card-produto">
+                <div class="card-imagem">
+                    <img src="../assets/img/FOTO KENYA AA.png" alt="Embalagem do Café KENYA AA 250g">
+
+                    <div class="produto-descricao-overlay">
+                        <p>Suculento e ousado. Acidez complexa e licorosa, trazendo a intensidade e o sabor de frutas escuras para a xícara.</p>
+                        <ul>
+                            <li>Notas: Vinho Tinto, Amoras, Groselha.</li>
+                            <li>Métodos: V60, Prensa Francesa.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <header class="card-info">
+                    <h3 class="produto-titulo">CAFÉ KENYA AA</h3>
+                    <span class="produto-peso">250g</span>
+                    <p class="produto-preco">R$84,99</p>
+                </header>
+
+                <div class="card-botoes">
+                    <button type="button" class="btn btn-primary">ADICIONAR AO CARRINHO</button>
+                    <button type="button" class="btn btn-outline">COMPRAR</button>
+                </div>
+            </article>
+
+            <article class="card-produto">
+                <div class="card-imagem">
+                    <img src="../assets/img/FOTO PACAMARA.png" alt="Embalagem do Café Pacamara 250g">
+
+                    <div class="produto-descricao-overlay">
+                        <p>O clássico confortável. Café com alta doçura, baixa acidez e textura aveludada. Perfeito para o dia a dia.</p>
+                        <ul>
+                            <li>Notas: Caramelo, Chocolate ao Leite, Amêndoas</li>
+                            <li>Métodos: Espresso, Moka, Prensa Francesa.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <header class="card-info">
+                    <h3 class="produto-titulo">CAFÉ PACAMARA</h3>
                     <span class="produto-peso">250g</span>
                     <p class="produto-preco">R$84,99</p>
                 </header>
@@ -194,14 +298,13 @@
     <div class="coluna-rodape menu">
         <h4>MENU</h4>
         <ul>
-        <li><a href="../pages/index.html">Sobre</a></li>
-        <li><a href="../pages/index.html">Informações</a></li>
-        <li><a href="../pages/index.html">Feedback</a></li>
-        <li><a href="../pages/form.html">Cadastre-se</a></li>
+        <li><a href="../pages/principal.html#cafes">Cafés</a></li>
+        <li><a href="../pages/principal.html#equipamentos">Equipamentos</a></li>
+        <li><a href="../pages/principal.html#kits">Kits</a></li>
         </ul>
     </div>
 
-    <div class="coluna-rodape marca">
+    <div class="coluna-rodape-marca">
         <img src="../assets/img/logo Baristopia.svg" alt="Baristopia Logo" class="logo-img">
         <p>&copy; 2026 Baristopia Café - Todos os direitos reservados</p>
     </div>
@@ -214,9 +317,11 @@
 
     </footer>
 
-    <script src="../js/navbar.js"></script>
-    
-    <script src="../js/main.js" defer></script>
-    
+    <!-- SCRIPTS INCIO-->
+
+    <script src="../js/components/navbar.js"></script>
+    <script type="module" src="../js/main.js" defer></script>
+    <!-- SCRIPTS FINAL-->
+
 </body>
 </html>

@@ -1,0 +1,56 @@
+/* css/components/dropdown.css */
+
+/* 1. Este wrapper é a âncora. Sem ele, o menu não sabe onde flutuar */
+.menu-perfil-wrapper {
+    position: relative; 
+    display: flex;
+    align-items: center;
+}
+
+/* 2. O balão flutuante - Escondido por padrão */
+.dropdown-perfil {
+    display: none; 
+    position: absolute;
+    top: 50px; /* Distância debaixo do ícone */
+    right: 0;
+    background-color: var(--offwhite);
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+    min-width: 140px;
+    flex-direction: column;
+    z-index: 1000;
+    border: 1px solid var(--beige-medium);
+}
+
+/* 3. A classe 'ativo' que o seu userMenu.js adiciona ao clicar */
+.dropdown-perfil.ativo {
+    display: flex;
+}
+
+/* 4. Estilização dos itens internos */
+.dropdown-apelido {
+    padding: 12px 16px 8px 16px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-align: left; /* Mudamos de center para left */
+    border-bottom: 1px solid var(--beige-medium);
+}
+
+.dropdown-item {
+    padding: 10px 16px;
+    margin: 0;
+    text-decoration: none;
+    color: var(--text-light);
+    cursor: pointer;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--beige-medium);
+    color: var(--cherry-dark);
+}

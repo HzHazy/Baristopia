@@ -16,6 +16,7 @@
 .modal[open]{
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
 .modal::backdrop{
@@ -31,14 +32,11 @@
 
 .modal p{
     color: var(--clr-primaria);
-}
-
-.modal #email{
-    margin-bottom: 8px;
+    font-size: 24px;
 }
 
 .close-button{
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     align-self: flex-end;
     height: 24px;
     width: 24px;
@@ -46,4 +44,21 @@
 
 .close-button svg{
     color: var(--clr-primaria);
+}
+
+.status-message {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: var(--ff-body);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo para quando for erro */
+.status-message.error {
+    /* background-color: #f8d7da; */
+    color: #721c24;
+    /* border: 1px solid #f5c6cb; */
+    align-self: flex-start;
 }
